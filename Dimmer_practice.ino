@@ -1,9 +1,9 @@
-#include "LEDSet.h"
+#include "DIMMER.h"
 #include "PushSet.h"
 
-int LED_dimmer_value = 10;
+int brightness_ratio = 10;
 
-LEDSet led = LEDSet(PA5);
+DIMMER led = DIMMER(PA5);
 PushSet push = PushSet(PC13);
 
 void setup() {
@@ -11,13 +11,13 @@ void setup() {
 }
 
 void loop() {
-  led.LED_DIMMER(LED_dimmer_value); 
+  led.LED_brightness(brightness_ratio); 
 }
 
 void pushtoggle(){
-  if(LED_dimmer_value > 10){
-    LED_dimmer_value = LED_dimmer_value - 10;
+  if(brightness_ratio > 10){
+    brightness_ratio = brightness_ratio - 10;
   }else{
-    LED_dimmer_value = 100;
+    brightness_ratio = 100;
   }
 }
