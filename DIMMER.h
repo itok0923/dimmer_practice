@@ -5,10 +5,9 @@
 
 class DIMMER {
   public:
-    DIMMER(int pin);
-    int LEDpin;
-    int LEDstat;
     void LED_brightness(int duty_cycle);
+    int on_ratio;
+    int off_ratio;
 };
 
 #endif

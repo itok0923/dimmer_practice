@@ -1,9 +1,12 @@
-#include "PushSet.h"
+#include <PushSet.h>
+#include <LEDSet.h>
 #include "DIMMER.h"
 
-DIMMER dimmer = DIMMER(PA5);
 PushSet push = PushSet(PC13);
+DIMMER dimmer;
 int brightness_value = 10;
+
+int test;
 
 void setup() {
   attachInterrupt(digitalPinToInterrupt(push.Pushpin),pushtoggle,FALLING);
@@ -14,9 +17,9 @@ void loop() {
 }
 
 void pushtoggle(){
-  if(brightness_value > 10){
-    brightness_value = brightness_value - 10;
+  if(brightness_value > 4){
+    brightness_value = brightness_value - 5;
   }else{
-    brightness_value = 255;
+    brightness_value = 100;
   }
 }
