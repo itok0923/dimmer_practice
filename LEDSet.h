@@ -9,6 +9,7 @@ class LEDSet {
     void swtiching();
     void on();
     void off();
+    void LED_DIMMER(int duty_cycle);
         
   private:
     int LEDpin;
