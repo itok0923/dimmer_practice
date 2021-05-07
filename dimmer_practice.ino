@@ -1,17 +1,16 @@
-#include "DIMMER.h"
 #include "PushSet.h"
+#include "DIMMER.h"
 
-int brightness_ratio = 10;
-
-DIMMER led = DIMMER(PA5);
+DIMMER dimmer = DIMMER(PA5);
 PushSet push = PushSet(PC13);
+int brightness_ratio = 10;
 
 void setup() {
   attachInterrupt(digitalPinToInterrupt(push.Pushpin),pushtoggle,FALLING);
 }
 
 void loop() {
-  led.LED_brightness(brightness_ratio); 
+  dimmer.LED_brightness(brightness_ratio); 
 }
 
 void pushtoggle(){
