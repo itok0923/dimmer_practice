@@ -3,20 +3,20 @@
 
 DIMMER dimmer = DIMMER(PA5);
 PushSet push = PushSet(PC13);
-int brightness_ratio = 10;
+int brightness_value = 10;
 
 void setup() {
   attachInterrupt(digitalPinToInterrupt(push.Pushpin),pushtoggle,FALLING);
 }
 
 void loop() {
-  dimmer.LED_brightness(brightness_ratio); 
+  dimmer.LED_brightness(brightness_value); 
 }
 
 void pushtoggle(){
-  if(brightness_ratio > 10){
-    brightness_ratio = brightness_ratio - 10;
+  if(brightness_value > 10){
+    brightness_value = brightness_value - 10;
   }else{
-    brightness_ratio = 100;
+    brightness_value = 255;
   }
 }
