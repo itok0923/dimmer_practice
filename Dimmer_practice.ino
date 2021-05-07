@@ -7,7 +7,7 @@ LEDSet led = LEDSet(PA5);
 PushSet push = PushSet(PC13);
 
 void setup() {
-  attachInterrupt(digitalPinToInterrupt(PC13),pushtoggle,FALLING);
+  attachInterrupt(digitalPinToInterrupt(push.Pushpin),pushtoggle,FALLING);
 }
 
 void loop() {
