@@ -2,7 +2,8 @@
 #include "Arduino.h"
 #include "DIMMER.h"
 
-#define one_cycle 2000 //μs 
+#define one_cycle 2000 //μs
+//analogWriteのPWMが490Hz=1周期2msらしいからそれに合わせた
 
 LEDSet led = LEDSet(PA5);
 
